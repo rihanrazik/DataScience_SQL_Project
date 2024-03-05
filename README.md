@@ -27,8 +27,9 @@ SELECT count(*) FROM business;
 iii. Category table = 10000
 SELECT count(*) FROM category;
 
-iv. Checkin table = 10000
+iv. Checkin table = 1000
 SELECT count(*) FROM checkin;
+
 -------------------------------------------------------------
 **2. Are there any columns with null values in the Users table? Indicate "yes," or "no."**
 
@@ -115,35 +116,8 @@ GROUP BY city
 ORDER BY Number_of_Reviews DESC;
 
 	Copy and Paste the Result Below:
-+-----------------+-------------------+
-| city            | Number_of_Reviews |
-+-----------------+-------------------+
-| Las Vegas       |              1561 |
-| Phoenix         |              1001 |
-| Toronto         |               985 |
-| Scottsdale      |               497 |
-| Charlotte       |               468 |
-| Pittsburgh      |               353 |
-| Montréal        |               337 |
-| Mesa            |               304 |
-| Henderson       |               274 |
-| Tempe           |               261 |
-| Edinburgh       |               239 |
-| Chandler        |               232 |
-| Cleveland       |               189 |
-| Gilbert         |               188 |
-| Glendale        |               188 |
-| Madison         |               176 |
-| Mississauga     |               150 |
-| Stuttgart       |               141 |
-| Peoria          |               105 |
-| Markham         |                80 |
-| Champaign       |                71 |
-| North Las Vegas |                70 |
-| North York      |                64 |
-| Surprise        |                60 |
-| Richmond Hill   |                54 |
-+-----------------+-------------------+
+
+ ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/83cd41f9-3d99-4795-aa90-914c61ff06fc)
 (Output limit exceeded, 25 of 362 total rows shown)
 
 -------------------------------------------------------
@@ -158,11 +132,7 @@ FROM business
 WHERE city = "Avon";
 
 Copy and Paste the Resulting Table Below (2 columns â€“ star rating and count):
-+-------------+-------+
-| Star_Rating | count |
-+-------------+-------+
-|        3.45 |    10 |
-+-------------+-------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/23d7d5c9-503e-4c78-8d49-6688870b96ff)
 
 **ii. Beachwood**
 
@@ -173,11 +143,8 @@ FROM business
 WHERE city = "Beachwood";
 
 Copy and Paste the Resulting Table Below (2 columns â€“ star rating and count):
-+-------------+-------+
-| Star_Rating | count |
-+-------------+-------+
-|        3.96 |    14 |
-+-------------+-------+	
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/5974a732-7048-4b0e-95ff-1e82f2128a38)
+
 
 -----------------------------------------
 **7. Find the top 3 users based on their total number of reviews:**
@@ -191,13 +158,9 @@ ORDER BY Total_number_of_reviews desc
 LIMIT 3;	
 		
 	Copy and Paste the Result Below:
-+-------+-------------------------+
-| name  | Total_number_of_reviews |
-+-------+-------------------------+
-| John  |                     102 |
-| David |                      90 |
-| Chris |                      74 |
-+-------+-------------------------+		
+ ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/4ed4c885-7321-41ef-a7b9-47f8245ce2a8)
+
+	
 -------------------------------------------------------------
 **8. Does posing more reviews correlate with more fans?**
 No! 
@@ -215,35 +178,7 @@ GROUP BY name
 ORDER BY numfans  des;
 
 Result:
-+-----------+---------+---------+
-| name      | numfans | reviews |
-+-----------+---------+---------+
-| Amy       |     519 |      35 |
-| Mimi      |     498 |       5 |
-| Harald    |     311 |       2 |
-| Gerald    |     256 |       2 |
-| Lisa      |     207 |      58 |
-| Nicole    |     200 |      35 |
-| Christine |     187 |      23 |
-| Mark      |     156 |      59 |
-| Jen       |     148 |      32 |
-| Linda     |     148 |      26 |
-| William   |     142 |      21 |
-| Cat       |     133 |       5 |
-| Michelle  |     133 |      43 |
-| Tiffany   |     128 |      21 |
-| Fran      |     126 |       3 |
-| Karen     |     123 |      40 |
-| Christina |     120 |      22 |
-| Lissa     |     120 |       2 |
-| Mike      |     119 |      74 |
-| Jessica   |     116 |      45 |
-| Andrew    |     114 |      41 |
-| Ben       |     112 |      16 |
-| bernice   |     105 |       1 |
-| Melissa   |     104 |      58 |
-| Roanna    |     104 |       1 |
-+-----------+---------+---------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/6732f26e-eb01-438d-8ec6-a8b0f06dfa28)
 (Output limit exceeded, 25 of 3454 total rows shown)
 
 --SQL code test2:
@@ -253,34 +188,7 @@ GROUP BY name
 ORDER BY reviews  desc; 
 
 Result:
-| name     | numfans | reviews |
-+----------+---------+---------+
-| John     |      46 |     102 |
-| David    |      25 |      90 |
-| Chris    |      52 |      74 |
-| Mike     |     119 |      74 |
-| Michael  |      34 |      72 |
-| Jennifer |      86 |      63 |
-| Mark     |     156 |      59 |
-| Lisa     |     207 |      58 |
-| Melissa  |     104 |      58 |
-| Sarah    |     100 |      55 |
-| Alex     |      22 |      54 |
-| James    |      86 |      48 |
-| Jessica  |     116 |      45 |
-| Ryan     |      24 |      45 |
-| J        |      13 |      43 |
-| Michelle |     133 |      43 |
-| Andrew   |     114 |      41 |
-| Kevin    |      20 |      41 |
-| Mary     |      18 |      41 |
-| Amanda   |      26 |      40 |
-| Ashley   |      16 |      40 |
-| Brian    |      72 |      40 |
-| Karen    |     123 |      40 |
-| Laura    |      38 |      39 |
-| Robert   |       9 |      39 |
-+----------+---------+---------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/97cfd82c-657a-4606-927e-5c70322d6702)
 (Output limit exceeded, 25 of 3454 total rows shown)
 
 
@@ -301,11 +209,7 @@ FROM review
 WHERE text like "%love%" 	;
 
 Result:
-+----------+
-| count(*) |
-+----------+
-|     1780 |
-+----------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/f8908f97-b588-4d6f-88c4-1b6c0fc3fc66)
 
 --Test2:
 SELECT count(*)
@@ -313,11 +217,7 @@ FROM review
 WHERE text like "%hate%";
 
 Result:
-+----------+
-| count(*) |
-+----------+
-|      232 |
-+----------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/a236e90a-be14-44cc-b691-71553995c0fe)
 
 The word "love" was used 1780 times in the reviews. But, the word "hate" was only used 232 times in the reviews.
 Therefore, we can conclude that there are more review with the word "love". 
@@ -335,22 +235,8 @@ ORDER BY numfans  desc
 LIMIT 10;	
 	
 	Copy and Paste the Result Below:
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/01e62de4-e9d8-4451-95c4-26356ef181e9)
 
-+-----------+---------+
-| name      | numfans |
-+-----------+---------+
-| Amy       |     519 |
-| Mimi      |     498 |
-| Harald    |     311 |
-| Gerald    |     256 |
-| Lisa      |     207 |
-| Nicole    |     200 |
-| Christine |     187 |
-| Mark      |     156 |
-| Jen       |     148 |
-| Linda     |     148 |
-+-----------+---------+
-	
 ------------------------------------------------------
 ------------------------------------------------------
 **PART 2:**
@@ -373,19 +259,7 @@ GROUP BY BusinessName, "Group"
 ORDER BY StarRating  ASC;
 
 Result:
-+--------+--------------------+------------+---------+-------------+
-| Group  | BusinessName       | StarRating | City    | category    |
-+--------+--------------------+------------+---------+-------------+
-| Group1 | 99 Cent Sushi      |        2.0 | Toronto | Restaurants |
-| Group1 | Big Smoke Burger   |        3.0 | Toronto | Restaurants |
-| Group1 | Pizzaiolo          |        3.0 | Toronto | Restaurants |
-| Group2 | The Kosher Gourmet |        3.5 | Toronto | Restaurants |
-| Group2 | Edulis             |        4.0 | Toronto | Restaurants |
-| Group2 | Mama Mia           |        4.0 | Toronto | Restaurants |
-| Group2 | Naniwa-Taro        |        4.0 | Toronto | Restaurants |
-| Group2 | Cabin Fever        |        4.5 | Toronto | Restaurants |
-| Group2 | Sushi Osaka        |        4.5 | Toronto | Restaurants |
-+--------+--------------------+------------+---------+-------------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/81dc991a-90a0-4022-946e-256d39a53369)
 
 -----------------------------------------------------------------------------
 
@@ -407,16 +281,7 @@ WHERE city = "Toronto" and c.category = "Restaurants" and StarRating between 2 a
 GROUP BY BusinessName, "Group"
 ORDER BY StarRating  ASC;
 
-+--------+------------------+------------+---------+-------------+----------------------+
-| Group  | BusinessName     | StarRating | City    | category    | hours                |
-+--------+------------------+------------+---------+-------------+----------------------+
-| Group1 | 99 Cent Sushi    |        2.0 | Toronto | Restaurants | Saturday|11:00-23:00 |
-| Group1 | Big Smoke Burger |        3.0 | Toronto | Restaurants | Saturday|10:30-21:00 |
-| Group1 | Pizzaiolo        |        3.0 | Toronto | Restaurants | Saturday|10:00-4:00  |
-| Group2 | Edulis           |        4.0 | Toronto | Restaurants | Saturday|18:00-23:00 |
-| Group2 | Cabin Fever      |        4.5 | Toronto | Restaurants | Saturday|16:00-2:00  |
-| Group2 | Sushi Osaka      |        4.5 | Toronto | Restaurants | Saturday|11:00-23:00 |
-+--------+------------------+------------+---------+-------------+----------------------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/c7145e48-db98-406d-8e50-9f8973b5eb10)
 
 -----------------------------------------------------------------------------
 **ii. Do the two groups you chose to analyze have a different number of reviews?**
@@ -441,18 +306,8 @@ WHERE city = "Toronto" and c.category = "Restaurants"
 GROUP BY BusinessName, "Group"
 ORDER BY StarRating  ASC;
 
-Result:     
-+--------+------------------+------------+---------+-------------+----------------------+-----------------+
-| Group  | BusinessName     | StarRating | City    | category    | hours                | NumberofReviews |
-+--------+------------------+------------+---------+-------------+----------------------+-----------------+
-| Group1 | 99 Cent Sushi    |        2.0 | Toronto | Restaurants | Saturday|11:00-23:00 |              77 |
-| Group1 | Big Smoke Burger |        3.0 | Toronto | Restaurants | Saturday|10:30-21:00 |              47 |
-| Group1 | Pizzaiolo        |        3.0 | Toronto | Restaurants | Saturday|10:00-4:00  |             147 |
-| Group2 | Edulis           |        4.0 | Toronto | Restaurants | Saturday|18:00-23:00 |             133 |
-| Group2 | Cabin Fever      |        4.5 | Toronto | Restaurants | Saturday|16:00-2:00  |              95 |
-| Group2 | Sushi Osaka      |        4.5 | Toronto | Restaurants | Saturday|11:00-23:00 |              28 |
-+--------+------------------+------------+---------+-------------+----------------------+-----------------+
-
+Result:    
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/a6129402-6471-4c66-aa2a-3bc23a78e8dd)
 
 -----------------------------------------------------
 
@@ -462,15 +317,7 @@ Restaurants with Business Parking had the highest number of customers providing 
 
 Sushi Oshaka having the highest rating (4.5) only with 28 ratings must be because it is a specialty dinner-only sushi restaurant, has reservations options and also it is away from the busy downtown core resulting in greater custoemer satisfaction.
 
-++--------+------------------+------------+---------+------------------------+-------------+-------------+-------------------------+----------------------+-----------------+
-| Group  | BusinessName     | StarRating | City    | neighborhood           | postal_code | category    | name                    | hours                | NumberofReviews |
-+--------+------------------+------------+---------+------------------------+-------------+-------------+-------------------------+----------------------+-----------------+
-| Group1 | 99 Cent Sushi    |        2.0 | Toronto | Downtown Core          | M5B 2E5     | Restaurants | GoodForKids             | Saturday|11:00-23:00 |              77 |
-| Group1 | Big Smoke Burger |        3.0 | Toronto | Downtown Core          | M4B 2L9     | Restaurants | BusinessParking         | Saturday|10:30-21:00 |             147 |
-| Group1 | Pizzaiolo        |        3.0 | Toronto | Entertainment District | M5H 1X6     | Restaurants | BusinessParking         | Saturday|10:00-4:00  |             133 |
-| Group2 | Edulis           |        4.0 | Toronto | Niagara                | M5V         | Restaurants | BusinessParking         | Saturday|18:00-23:00 |              95 |
-| Group2 | Sushi Osaka      |        4.5 | Toronto | Etobicoke              | M9A 1C2     | Restaurants | RestaurantsReservations | Saturday|11:00-23:00 |              28 |
-+--------+------------------+------------+---------+------------------------+-------------+-------------+-------------------------+----------------------+-----------------+
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/9d8964bd-f52d-4fd8-be6b-18baf7a8ab64)
 
 SQL code used for analysis:
 
@@ -498,17 +345,7 @@ ORDER BY StarRating  ASC;
 
 **2. Group business based on the ones that are open and the ones that are closed. What differences can you find between the ones that are still open and the ones that are closed? List at least two differences and the SQL code you used to arrive at your answer.**
 		
-
-+--------+------------------+------------+---------+------------------------+-------------+-------------+-------------------------+---------+----------------------+-----------------+
-| Group  | BusinessName     | StarRating | City    | neighborhood           | postal_code | category    | name                    | is_open | hours                | NumberofReviews |
-+--------+------------------+------------+---------+------------------------+-------------+-------------+-------------------------+---------+----------------------+-----------------+
-| Group1 | 99 Cent Sushi    |        2.0 | Toronto | Downtown Core          | M5B 2E5     | Restaurants | GoodForKids             |       0 | Saturday|11:00-23:00 |              77 |
-| Group1 | Big Smoke Burger |        3.0 | Toronto | Downtown Core          | M4B 2L9     | Restaurants | BusinessParking         |       1 | Saturday|10:30-21:00 |             147 |
-| Group1 | Pizzaiolo        |        3.0 | Toronto | Entertainment District | M5H 1X6     | Restaurants | BusinessParking         |       1 | Saturday|10:00-4:00  |             133 |
-| Group2 | Edulis           |        4.0 | Toronto | Niagara                | M5V         | Restaurants | BusinessParking         |       1 | Saturday|18:00-23:00 |              95 |
-| Group2 | Sushi Osaka      |        4.5 | Toronto | Etobicoke              | M9A 1C2     | Restaurants | RestaurantsReservations |       1 | Saturday|11:00-23:00 |              28 |
-+--------+------------------+------------+---------+------------------------+-------------+-------------+-------------------------+---------+----------------------+-----------------+
-
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/2f8f48c6-5be4-44f9-b4b0-11d295eafeaa)
 
 i. Difference 1:         
 
@@ -580,17 +417,10 @@ ORDER BY B.city
 LIMIT 5;
                           
 iv. Output of your finished dataset:
-                   
-+----------------------+------------+-------+-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| name                 |  city      | stars | TypeofReview      | text                                                                                                                                                                              |
-+----------------------+------------+-------+-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Dal Toro Ristorante  |  Las Vegas | 2.5   | positive_review   | We've made this our MUST STOP every time we stay in Vegas. The food blows our mind. Breakfast is always perfect & they pour the BEST cup of coffee in the world.!!!!              | 
-| Mizuya               |  Las Vegas | 3.0   | positive_review   | We've eaten here several times.  The sushi is always good, as is the service.  Contrary to other reviews, I thought it was a nice calm quiet place to go.  Would eat here again!  |
-| Markham Honda        |  Markham   | 2.3   | Negative_review   | I bring my car in here for servicing. I know car garages especially ones associated with dealershipa gets a bad rap. I've had bad  experiences here.                              |
-| Elegant Car Rental   |  Brampton  | 1.5   | Negative_review   | Horrible service!! Will never go again!                                                                                                                                           |
-| Cafe Tandoor         |  Aurora    | 3.5   | positive_review   | To make this place even more amazing, it is one of the places featured on WPXI's Just Pay Half Hot Card where you pay $25 for the card and it is worth $50 at local businesses.   |
-+----------------------+------------+-------+-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/d6caea8f-3416-4d11-a2b9-d20b5f322183)
+
+ 
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
 
