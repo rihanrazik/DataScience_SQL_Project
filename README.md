@@ -1,4 +1,4 @@
-# SQL_Project for Data Science certification
+# Project for SQL Data Science certification
 **Comprehensive SQL data analysis project based on the Yelp database, intended for a SQL Data Science certification.** 
 
 
