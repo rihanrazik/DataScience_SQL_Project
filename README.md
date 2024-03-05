@@ -19,104 +19,107 @@ In the second part of the assignment, you are asked to come up with your own inf
 **1. Profile the data by finding the total number of records for each of the tables below:**
 	
 i. Attribute table =10000
-SELECT count(*) FROM attribute;
+
+	SELECT count(*) FROM attribute;
 
 ii. Business table = 10000
-SELECT count(*) FROM business;
+
+	SELECT count(*) FROM business;
 
 iii. Category table = 10000
-SELECT count(*) FROM category;
+
+	SELECT count(*) FROM category;
 
 iv. Checkin table = 1000
-SELECT count(*) FROM checkin;
+
+	SELECT count(*) FROM checkin;
 
 -------------------------------------------------------------
 **2. Are there any columns with null values in the Users table? Indicate "yes," or "no."**
 
-	Answer: no.
+Answer: No.
 	
-	**
-	SQL code used to arrive at answer:**
+**SQL code used to arrive at answer:**
 
-SELECT
-    CASE
-        WHEN COUNT(*) > 0 THEN 'yes,'
-        ELSE 'no.'
-    END AS any_null_values
-FROM
-    User
-WHERE
-    id IS NULL OR
-    name IS NULL OR
-    review_count IS NULL OR
-    yelping_since IS NULL OR
-    useful is NULL or
-    funny is NULL or
-    cool is NULL or
-    fans is NULL or 
-    average_stars is NULL or
-    compliment_hot is NULL or
-    compliment_more is NULL or 
-    compliment_profile is NULL or
-    compliment_cute is NULL or
-    compliment_list is NULL or
-    compliment_note is NULL or
-    compliment_plain is NULL or
-    compliment_cool is NULL or
-    compliment_funny  is NULL or
-    compliment_writer is NULL or
-    compliment_photos  is NULL;
+	SELECT
+ 	   CASE
+ 	       WHEN COUNT(*) > 0 THEN 'yes,'
+	        ELSE 'no.'
+	    END AS any_null_values
+	FROM
+	    User
+	WHERE
+  	  id IS NULL OR
+	    name IS NULL OR
+	    review_count IS NULL OR
+ 	   yelping_since IS NULL OR
+ 	   useful is NULL or
+ 	   funny is NULL or
+ 	   cool is NULL or
+ 	   fans is NULL or 
+ 	   average_stars is NULL or
+ 	   compliment_hot is NULL or
+ 	   compliment_more is NULL or 
+ 	   compliment_profile is NULL or
+ 	   compliment_cute is NULL or
+	   compliment_list is NULL or
+	   compliment_note is NULL or
+  	   compliment_plain is NULL or
+  	   compliment_cool is NULL or
+  	   compliment_funny  is NULL or
+  	   compliment_writer is NULL or
+  	   compliment_photos  is NULL;
 
 --------------------------------------------
 **3. For each table and column listed below, display the smallest (minimum), largest (maximum), and average (mean) value for the following fields:**
 
-	i. Table: Review, Column: Stars
+i. Table: Review, Column: Stars
 	
-		min:1		max:5		avg:3.7082
+min:1		max:5		avg:3.7082
 	
-		SELECT min(stars), max(stars), avg(stars)
-		FROM review;	
+	SELECT min(stars), max(stars), avg(stars)
+	FROM review;	
 	
-	ii. Table: Business, Column: Stars
+ii. Table: Business, Column: Stars
 	
-		min:1.0		max:5.0		avg:3.7082
+min:1.0		max:5.0		avg:3.7082
 	
-		SELECT min(stars), max(stars), avg(stars)
-		FROM business;
+	SELECT min(stars), max(stars), avg(stars)
+	FROM business;
 		
 	
-	iii. Table: Tip, Column: Likes
+iii. Table: Tip, Column: Likes
 	
-		min:0		max:2		avg:0.0144
+min:0		max:2		avg:0.0144
 		
-		SELECT min(likes), max(likes), avg(likes)
-		FROM tip;
+	SELECT min(likes), max(likes), avg(likes)
+	FROM tip;
 	
-	iv. Table: Checkin, Column: Count
+iv. Table: Checkin, Column: Count
 	
-		min:1		max:53		avg:1.9414
+min:1		max:53		avg:1.9414
 		
-		SELECT min(count), max(count), avg(count)
-		FROM checkin;
+	SELECT min(count), max(count), avg(count)
+	FROM checkin;
 	
-	v. Table: User, Column: Review_count
+v. Table: User, Column: Review_count
 	
-		min:0		max:2000	avg:24.2995
+min:0		max:2000	avg:24.2995
 
-		SELECT min(Review_count), max(Review_count), avg(Review_count)
-		FROM user;		
+	SELECT min(Review_count), max(Review_count), avg(Review_count)
+	FROM user;		
 
 -------------------------------------------------
 **5. List the cities with the most reviews in descending order:**
 
 SQL code used to arrive at answer:
 
-SELECT city, count(Review_count) as Number_of_Reviews
-FROM business
-GROUP BY city
-ORDER BY Number_of_Reviews DESC;
+	SELECT city, count(Review_count) as Number_of_Reviews
+	FROM business
+	GROUP BY city
+	ORDER BY Number_of_Reviews DESC;
 
-	Copy and Paste the Result Below:
+Copy and Paste the Result Below:
 
  ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/83cd41f9-3d99-4795-aa90-914c61ff06fc)
 
@@ -129,9 +132,9 @@ ORDER BY Number_of_Reviews DESC;
 
 SQL code used to arrive at answer:
 
-SELECT avg(stars) AS Star_Rating, count(stars) AS count
-FROM business
-WHERE city = "Avon";
+	SELECT avg(stars) AS Star_Rating, count(stars) AS count
+	FROM business
+	WHERE city = "Avon";
 
 Copy and Paste the Resulting Table Below (2 columns â€“ star rating and count):
 
@@ -141,9 +144,9 @@ Copy and Paste the Resulting Table Below (2 columns â€“ star rating and cou
 
 SQL code used to arrive at answer:
 
-SELECT round(avg(stars),2) AS Star_Rating, count(stars) AS count
-FROM business
-WHERE city = "Beachwood";
+	SELECT round(avg(stars),2) AS Star_Rating, count(stars) AS count
+	FROM business
+	WHERE city = "Beachwood";
 
 Copy and Paste the Resulting Table Below (2 columns â€“ star rating and count):
 
@@ -155,13 +158,13 @@ Copy and Paste the Resulting Table Below (2 columns â€“ star rating and cou
 
 SQL code used to arrive at answer:
 
-SELECT name, count(review_count) as Total_number_of_reviews
-FROM user
-GROUP BY name
-ORDER BY Total_number_of_reviews desc
-LIMIT 3;	
+	SELECT name, count(review_count) as Total_number_of_reviews
+	FROM user
+	GROUP BY name
+	ORDER BY Total_number_of_reviews desc
+	LIMIT 3;	
 		
-	Copy and Paste the Result Below:
+Copy and Paste the Result Below:
  
  ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/4ed4c885-7321-41ef-a7b9-47f8245ce2a8)
 
@@ -174,13 +177,14 @@ I used the SQL query below to assess this question, but the results show that us
 number of followers do not necessarily have the highest number of reviews. In fact, there are users 
 with less fans, but they have more reviews than users with the highest number of fans.
 
-	Please explain your findings and interpretation of the results:
+Please explain your findings and interpretation of the results:
 	
 --SQL code test1:
-SELECT name, sum(fans) as numfans, count(review_count) as reviews
-FROM user
-GROUP BY name
-ORDER BY numfans  des;
+
+	SELECT name, sum(fans) as numfans, count(review_count) as reviews
+	FROM user
+	GROUP BY name
+	ORDER BY numfans  desc;
 
 Result:
 
@@ -189,10 +193,11 @@ Result:
 (Output limit exceeded, 25 of 3454 total rows shown)
 
 --SQL code test2:
-SELECT name, sum(fans) as numfans, count(review_count) as reviews
-FROM user
-GROUP BY name
-ORDER BY reviews  desc; 
+
+	SELECT name, sum(fans) as numfans, count(review_count) as reviews
+	FROM user
+	GROUP BY name
+	ORDER BY reviews  desc; 
 
 Result:
 
@@ -206,25 +211,27 @@ In conclusion, posing more reviews does not correlate with having more fans.
 
 **9. Are there more reviews with the word "love" or with the word "hate" in them?**
 
- Answer:
+Answer:
 
 There are more review with the word "love" compared to the word "hate". I have tested it with the followint querry.
 	
-	SQL code used to arrive at answer:
+SQL code used to arrive at answer:
  
 --Test1:
-SELECT count(*)
-FROM review
-WHERE text like "%love%" 	;
+
+	SELECT count(*)
+	FROM review
+	WHERE text like "%love%" 	;
 
 Result:
 
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/f8908f97-b588-4d6f-88c4-1b6c0fc3fc66)
 
 --Test2:
-SELECT count(*)
-FROM review
-WHERE text like "%hate%";
+
+	SELECT count(*)
+	FROM review
+	WHERE text like "%hate%";
 
 Result:
 
@@ -237,15 +244,15 @@ Therefore, we can conclude that there are more review with the word "love".
 
 **10. Find the top 10 users with the most fans:**
 
-	SQL code used to arrive at answer:
+SQL code used to arrive at answer:
 
-SELECT name, sum(fans) as numfans
-FROM user
-GROUP BY name
-ORDER BY numfans  desc 
-LIMIT 10;	
+	SELECT name, sum(fans) as numfans
+	FROM user
+	GROUP BY name
+	ORDER BY numfans  desc 
+	LIMIT 10;	
 	
-	Copy and Paste the Result Below:
+Copy and Paste the Result Below:
  
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/01e62de4-e9d8-4451-95c4-26356ef181e9)
 
@@ -258,17 +265,17 @@ LIMIT 10;
 	
 First, I will use the following SQL code to extract the data I am looking for to select the businesses and group them by starratings as "Group1" and "Group2":
 
-SELECT 
-CASE
-    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
-    ELSE "Group2"
-END AS "Group",
-b.name as BusinessName, b.stars As StarRating, b.city as City,c.category 
-FROM business b JOIN category c ON 
-b.id = c.business_id
-WHERE city = "Toronto" and c.category = "Restaurants" and StarRating between 2 and 5
-GROUP BY BusinessName, "Group"
-ORDER BY StarRating  ASC;
+	SELECT 
+	CASE
+	    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
+	    ELSE "Group2"
+	END AS "Group",
+	b.name as BusinessName, b.stars As StarRating, b.city as City,c.category 
+	FROM business b JOIN category c ON 
+	b.id = c.business_id
+	WHERE city = "Toronto" and c.category = "Restaurants" and StarRating between 2 and 5
+	GROUP BY BusinessName, "Group"
+	ORDER BY StarRating  ASC;
 
 Result:
 
@@ -280,19 +287,19 @@ Result:
 
 Yes the two groups have different distribution of hours. See below:
 
-SELECT 
-CASE
-    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
-    ELSE "Group2"
-END AS "Group",
-b.name as BusinessName, b.stars As StarRating, b.city as City,c.category, h.hours 
-FROM business b JOIN category c ON 
-b.id = c.business_id
-JOIN hours h on
-b.id=h.business_id
-WHERE city = "Toronto" and c.category = "Restaurants" and StarRating between 2 and 5
-GROUP BY BusinessName, "Group"
-ORDER BY StarRating  ASC;
+	SELECT 
+	CASE
+	    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
+	    ELSE "Group2"
+	END AS "Group",
+	b.name as BusinessName, b.stars As StarRating, b.city as City,c.category, h.hours 
+	FROM business b JOIN category c ON 
+	b.id = c.business_id
+	JOIN hours h on
+	b.id=h.business_id
+	WHERE city = "Toronto" and c.category = "Restaurants" and StarRating between 2 and 5
+	GROUP BY BusinessName, "Group"
+	ORDER BY StarRating  ASC;
 
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/c7145e48-db98-406d-8e50-9f8973b5eb10)
 
@@ -301,23 +308,23 @@ ORDER BY StarRating  ASC;
 
 Yes. Number of review vary between these businesses. lowest number of review being 5 (average 2.0 review) and the highest number of review being 89 (average 4.0 review). See below for query and result.
          
-SELECT 
-CASE
-    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
-    ELSE "Group2"
-END AS "Group",
-b.name as BusinessName, 
-b.stars As StarRating, 
-b.city as City, c.category, 
-h.hours,
-count(b.review_count) as NumberofReviews
-FROM business b JOIN category c ON 
-b.id = c.business_id
-JOIN hours h on
-b.id=h.business_id
-WHERE city = "Toronto" and c.category = "Restaurants" 
-GROUP BY BusinessName, "Group"
-ORDER BY StarRating  ASC;
+	SELECT 
+	CASE
+	    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
+	    ELSE "Group2"
+	END AS "Group",
+	b.name as BusinessName, 
+	b.stars As StarRating, 
+	b.city as City, c.category, 
+	h.hours,
+	count(b.review_count) as NumberofReviews
+	FROM business b JOIN category c ON 
+	b.id = c.business_id
+	JOIN hours h on
+	b.id=h.business_id
+	WHERE city = "Toronto" and c.category = "Restaurants" 
+	GROUP BY BusinessName, "Group"
+	ORDER BY StarRating  ASC;
 
 Result:  
 
@@ -335,25 +342,25 @@ Sushi Oshaka having the highest rating (4.5) only with 28 ratings must be becaus
 
 SQL code used for analysis:
 
-SELECT 
-CASE
-    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
-    ELSE "Group2"
-END AS "Group",
-b.name as BusinessName, 
-b.stars As StarRating, 
-b.city as City, b.neighborhood, b.postal_code, c.category, a.name,
-h.hours,
-count(b.review_count) as NumberofReviews
-FROM business b JOIN category c ON 
-b.id = c.business_id
-JOIN hours h on
-b.id=h.business_id
-JOIN attribute a on
-a.business_id=b.id
-WHERE city = "Toronto" and c.category = "Restaurants" 
-GROUP BY BusinessName, "Group"
-ORDER BY StarRating  ASC;
+	SELECT 
+	CASE
+	    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
+	    ELSE "Group2"
+	END AS "Group",
+	b.name as BusinessName, 
+	b.stars As StarRating, 
+	b.city as City, b.neighborhood, b.postal_code, c.category, a.name,
+	h.hours,
+	count(b.review_count) as NumberofReviews
+	FROM business b JOIN category c ON 
+	b.id = c.business_id
+	JOIN hours h on
+	b.id=h.business_id
+	JOIN attribute a on
+	a.business_id=b.id
+	WHERE city = "Toronto" and c.category = "Restaurants" 
+	GROUP BY BusinessName, "Group"
+	ORDER BY StarRating  ASC;
 
 --------------------------------------------
 
@@ -372,25 +379,25 @@ ii. Difference 2:
          
 SQL code used for analysis:
 
-SELECT 
-CASE
-    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
-    ELSE "Group2"
-END AS "Group",
-b.name as BusinessName, 
-b.stars As StarRating, 
-b.city as City, b.neighborhood, b.postal_code, c.category, a.name,b.is_open,
-h.hours,
-count(b.review_count) as NumberofReviews
-FROM business b JOIN category c ON 
-b.id = c.business_id
-JOIN hours h on
-b.id=h.business_id
-JOIN attribute a on
-a.business_id=b.id
-WHERE city = "Toronto" and c.category = "Restaurants" 
-GROUP BY BusinessName, "Group", b.is_open
-ORDER BY StarRating  ASC;
+	SELECT 
+	CASE
+	    WHEN b.stars between 2.0 and 3.0 THEN "Group1"
+	    ELSE "Group2"
+	END AS "Group",
+	b.name as BusinessName, 
+	b.stars As StarRating, 
+	b.city as City, b.neighborhood, b.postal_code, c.category, a.name,b.is_open,
+	h.hours,
+	count(b.review_count) as NumberofReviews
+	FROM business b JOIN category c ON 
+	b.id = c.business_id
+	JOIN hours h on
+	b.id=h.business_id
+	JOIN attribute a on
+	a.business_id=b.id
+	WHERE city = "Toronto" and c.category = "Restaurants" 
+	GROUP BY BusinessName, "Group", b.is_open
+	ORDER BY StarRating  ASC;
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
@@ -410,25 +417,25 @@ In the SQL query provided, I implemented text parsing by incorporating specific 
 
 iii. Provide the SQL code you used to create your final dataset:
 
-SELECT
-    b.name,
-    b.city,
-    b.stars,
-    CASE
-        WHEN b.stars >= "4" THEN 'positive_review'
-        WHEN b.stars <= "2" THEN 'Negative_review'
-        WHEN r.text LIKE '%perfect%' OR r.text LIKE '%good%' OR r.text LIKE '%personable%' OR r.text LIKE '%excellent%' OR r.text LIKE '%love%' OR r.text LIKE '%amazing%' OR r.text LIKE '%best%' OR r.text OR r.text LIKE '%affordable%' OR r.text LIKE '%pleased%' OR r.text LIKE '%pleasant%'LIKE '%favourite%' OR r.text LIKE '%great%'OR r.text LIKE '%well_done%' OR r.text LIKE '%delicious%'  THEN 'positive_review'
-        WHEN r.text LIKE '%bad%' OR r.text LIKE '%hat%'  OR r.text LIKE '%skip%'OR r.text LIKE '%need%training%' OR r.text LIKE '%horrible%' OR r.text LIKE '%terrible%' OR r.text LIKE '%annoying%' OR r.text LIKE '%over%priced%' OR r.text LIKE '%wtf%' OR r.text LIKE '%rude%'OR r.text LIKE '%not%cool%'THEN 'Negative_review'
-        ELSE 'Average_Review'
-    END AS TypeofReview,
-    r.text   
-FROM
-    business b
-JOIN
-    review r ON b.id = r.business_ID
-WHERE b.stars BETWEEN 2 AND 3
-ORDER BY B.city
-LIMIT 5;
+	SELECT
+	    b.name,
+	    b.city,
+	    b.stars,
+	    CASE
+	        WHEN b.stars >= "4" THEN 'positive_review'
+	        WHEN b.stars <= "2" THEN 'Negative_review'
+	        WHEN r.text LIKE '%perfect%' OR r.text LIKE '%good%' OR r.text LIKE '%personable%' OR r.text LIKE '%excellent%' OR r.text LIKE '%love%' OR r.text LIKE '%amazing%' OR r.text LIKE '%best%' OR r.text OR r.text LIKE '%affordable%' OR r.text LIKE '%pleased%' OR r.text LIKE '%pleasant%'LIKE '%favourite%' OR r.text LIKE '%great%'OR r.text LIKE '%well_done%' OR r.text LIKE '%delicious%'  THEN 'positive_review'
+ 	       WHEN r.text LIKE '%bad%' OR r.text LIKE '%hat%'  OR r.text LIKE '%skip%'OR r.text LIKE '%need%training%' OR r.text LIKE '%horrible%' OR r.text LIKE '%terrible%' OR r.text LIKE '%annoying%' OR r.text LIKE '%over%priced%' OR r.text LIKE '%wtf%' OR r.text 	LIKE '%rude%'OR r.text LIKE '%not%cool%'THEN 'Negative_review'
+	        ELSE 'Average_Review'
+	    END AS TypeofReview,
+	    r.text   
+	FROM
+	    business b
+	JOIN
+	    review r ON b.id = r.business_ID
+	WHERE b.stars BETWEEN 2 AND 3
+	ORDER BY B.city
+	LIMIT 5;
                           
 iv. Output of your finished dataset:
 
@@ -440,6 +447,6 @@ iv. Output of your finished dataset:
 
 **Summary:**
 
-Completing my Data Science certification SQL project was a hands-on journey that sharpened my skills in SQL and data analysis. From profiling the Yelp dataset to delving into Toronto's restaurant scene, I tackled various tasks, showcasing clarity in SQL code and analytical thinking.
+Completing the SQL Data Science certification final project was a hands-on journey that sharpened my skills in SQL and data analysis. From profiling the Yelp dataset to delving into Toronto's restaurant scene, I tackled various tasks, showcasing clarity in SQL code and analytical thinking.
 
 In the final part, I opted for sentiment analysis, parsing Yelp reviews to categorize them as 'positive,' 'negative,' or 'average.' This project provided practical insights into data analysis, emphasizing its significance in the field of Data Science.
