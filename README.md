@@ -105,6 +105,7 @@ WHERE
 
 		SELECT min(Review_count), max(Review_count), avg(Review_count)
 		FROM user;		
+
 -------------------------------------------------
 **5. List the cities with the most reviews in descending order:**
 
@@ -118,6 +119,7 @@ ORDER BY Number_of_Reviews DESC;
 	Copy and Paste the Result Below:
 
  ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/83cd41f9-3d99-4795-aa90-914c61ff06fc)
+
 (Output limit exceeded, 25 of 362 total rows shown)
 
 -------------------------------------------------------
@@ -132,6 +134,7 @@ FROM business
 WHERE city = "Avon";
 
 Copy and Paste the Resulting Table Below (2 columns â€“ star rating and count):
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/23d7d5c9-503e-4c78-8d49-6688870b96ff)
 
 **ii. Beachwood**
@@ -143,6 +146,7 @@ FROM business
 WHERE city = "Beachwood";
 
 Copy and Paste the Resulting Table Below (2 columns â€“ star rating and count):
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/5974a732-7048-4b0e-95ff-1e82f2128a38)
 
 
@@ -158,6 +162,7 @@ ORDER BY Total_number_of_reviews desc
 LIMIT 3;	
 		
 	Copy and Paste the Result Below:
+ 
  ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/4ed4c885-7321-41ef-a7b9-47f8245ce2a8)
 
 	
@@ -178,7 +183,9 @@ GROUP BY name
 ORDER BY numfans  des;
 
 Result:
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/6732f26e-eb01-438d-8ec6-a8b0f06dfa28)
+
 (Output limit exceeded, 25 of 3454 total rows shown)
 
 --SQL code test2:
@@ -188,7 +195,9 @@ GROUP BY name
 ORDER BY reviews  desc; 
 
 Result:
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/97cfd82c-657a-4606-927e-5c70322d6702)
+
 (Output limit exceeded, 25 of 3454 total rows shown)
 
 
@@ -209,6 +218,7 @@ FROM review
 WHERE text like "%love%" 	;
 
 Result:
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/f8908f97-b588-4d6f-88c4-1b6c0fc3fc66)
 
 --Test2:
@@ -217,6 +227,7 @@ FROM review
 WHERE text like "%hate%";
 
 Result:
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/a236e90a-be14-44cc-b691-71553995c0fe)
 
 The word "love" was used 1780 times in the reviews. But, the word "hate" was only used 232 times in the reviews.
@@ -235,6 +246,7 @@ ORDER BY numfans  desc
 LIMIT 10;	
 	
 	Copy and Paste the Result Below:
+ 
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/01e62de4-e9d8-4451-95c4-26356ef181e9)
 
 ------------------------------------------------------
@@ -259,6 +271,7 @@ GROUP BY BusinessName, "Group"
 ORDER BY StarRating  ASC;
 
 Result:
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/81dc991a-90a0-4022-946e-256d39a53369)
 
 -----------------------------------------------------------------------------
@@ -306,7 +319,8 @@ WHERE city = "Toronto" and c.category = "Restaurants"
 GROUP BY BusinessName, "Group"
 ORDER BY StarRating  ASC;
 
-Result:    
+Result:  
+
 ![image](https://github.com/rihanrazik/SQL_Project/assets/158120553/a6129402-6471-4c66-aa2a-3bc23a78e8dd)
 
 -----------------------------------------------------
