@@ -1,7 +1,7 @@
 # SQL_Project for Data Science certification
-**FinalProject_for_SQL for Data Science certification**
-
 **Comprehensive SQL data analysis project based on the Yelp database, intended for a SQL Data Science certification.** 
+
+
 
 **INTRO:**
 Data Scientist Role Play: Profiling and Analyzing the Yelp Dataset Coursera Worksheet
