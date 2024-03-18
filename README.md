@@ -25,14 +25,7 @@ i. Attribute table =10000
 ii. Business table = 10000
 
 	SELECT count(*) FROM business;
- 
-iii. Category table = 10000
 
-	SELECT count(*) FROM category;
-
-iv. Checkin table = 1000
-
-	SELECT count(*) FROM checkin;
 
 -------------------------------------------------------------
 **2. Are there any columns with null values in the Users table? Indicate "yes," or "no."**
