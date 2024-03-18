@@ -400,6 +400,7 @@ SQL code used for analysis:
 **Ideas for analysis include: Parsing out keywords and business attributes for sentiment analysis, clustering businesses to find commonalities or anomalies between them, predicting the overall star rating for a business, predicting the number of fans a user will have, and so on. These are just a few examples to get you started, so feel free to be creative and come up with your own problem you want to solve. Provide answers, in-line, to all of the following:**
 
 i. Indicate the type of analysis you chose to do:
+
 I will be conducting **sentiment analysis** by parsing out keywords and business attributes.
 
 i. Write 1-2 brief paragraphs on the type of data you will need for your analysis and why you chose that data:
